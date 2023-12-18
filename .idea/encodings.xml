@@ -13,6 +13,8 @@
     <file url="file://$PROJECT_DIR$/chapter4-docker/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chapter4/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chapter4/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chapter5-configserver/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chapter5-configserver/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hello/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hello/src/main/resources" charset="UTF-8" />
   </component>
