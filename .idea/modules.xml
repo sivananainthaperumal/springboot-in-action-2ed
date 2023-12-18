@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/chapter4-dockerize.iml" filepath="$PROJECT_DIR$/chapter4-dockerize.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/springboot-in-action-2ed.iml" filepath="$PROJECT_DIR$/.idea/springboot-in-action-2ed.iml" />
     </modules>
   </component>
