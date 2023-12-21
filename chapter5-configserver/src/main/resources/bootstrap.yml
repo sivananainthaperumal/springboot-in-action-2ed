@@ -15,6 +15,9 @@ spring:
           uri: https://github.com/sivananainthaperumal/springboot-in-action-2ed-cfg.git
           searchPaths: licensingservice
 
+encrypt:
+  key: iamsymmetrickeyencryption
+
 #Enable all Spring Boot Actuator endpoints.
 management:
   endpoints:
