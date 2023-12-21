@@ -5,10 +5,19 @@ spring:
   application:
     name: config-server
   profiles:
-    active: native
+    active: native,git
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/config
+        #native:
+        #  search-locations: classpath:/config
+        git:
+          uri: https://github.com/sivananainthaperumal/springboot-in-action-2ed-cfg.git
+          searchPaths: licensingservice
 
+#Enable all Spring Boot Actuator endpoints.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
