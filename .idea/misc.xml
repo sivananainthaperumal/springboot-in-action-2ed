@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/chapter4-docker/pom.xml" />
         <option value="$PROJECT_DIR$/chapter5-configserver/pom.xml" />
         <option value="$PROJECT_DIR$/chapter6-servicediscovery/pom.xml" />
+        <option value="$PROJECT_DIR$/organization-service/pom.xml" />
+        <option value="$PROJECT_DIR$/organizationservice/pom.xml" />
       </list>
     </option>
   </component>

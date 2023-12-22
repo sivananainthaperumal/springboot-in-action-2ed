@@ -7,12 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="chapter6-servicediscovery" />
-        <module name="chapter4-docker" />
+        <module name="organizationservice" />
         <module name="chapter3" />
         <module name="chapter2" />
-        <module name="chapter5-configserver" />
         <module name="chapter1" />
+        <module name="chapter6-servicediscovery" />
+        <module name="chapter4-docker" />
+        <module name="chapter5-configserver" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +22,7 @@
       <module name="chapter4-docker" target="17" />
       <module name="chapter4-dockerize" target="11" />
       <module name="hello" target="11" />
+      <module name="organization-service" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -33,6 +35,8 @@
       <module name="chapter5-configserver" options="-parameters" />
       <module name="chapter6-servicediscovery" options="-parameters" />
       <module name="hello" options="-parameters" />
+      <module name="organization-service" options="-parameters" />
+      <module name="organizationservice" options="-parameters" />
     </option>
   </component>
 </project>
