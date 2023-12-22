@@ -13,7 +13,10 @@ spring:
         #  search-locations: classpath:/config
         git:
           uri: https://github.com/sivananainthaperumal/springboot-in-action-2ed-cfg.git
-          searchPaths: licensingservice
+          #searchPaths: licensingservice
+          search-paths:
+            - licensingservice
+            - organizationservice
 
 encrypt:
   key: iamsymmetrickeyencryption
