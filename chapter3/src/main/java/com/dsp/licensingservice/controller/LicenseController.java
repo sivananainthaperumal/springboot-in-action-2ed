@@ -2,6 +2,8 @@ package com.dsp.licensingservice.controller;
 
 import com.dsp.licensingservice.model.License;
 import com.dsp.licensingservice.service.LicenseService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,7 @@ import java.util.Locale;
 @RequestMapping(value = "/v1/organization/{organizationId}/license")
 public class LicenseController {
 
+    Logger logger = LoggerFactory.getLogger(LicenseController.class);
     @Autowired
     private LicenseService licenseService;
 
@@ -19,8 +22,18 @@ public class LicenseController {
     public ResponseEntity<License> getLicense(
             @PathVariable("organizationId") String organizationId,
             @PathVariable("licenseId") String licenseId){
+        logger.info("inside get license");
         License license = licenseService.getLicense(licenseId,organizationId);
         return ResponseEntity.ok(license);
+    }
+
+    @GetMapping(value = "/{licenseId}/client/{clientType}")
+    public ResponseEntity<License> getLicenseWithClient(
+            @PathVariable("organizationId") String organizationId,
+            @PathVariable("licenseId") String licenseId,
+            @PathVariable("clientType") String clientType){
+        logger.info("Inside get license wiht client");
+        return ResponseEntity.ok(licenseService.getLicense(licenseId,organizationId,clientType));
     }
 
     @PutMapping

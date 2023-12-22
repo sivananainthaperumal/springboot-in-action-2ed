@@ -8,9 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="organizationservice" />
-        <module name="chapter3" />
         <module name="chapter2" />
         <module name="chapter1" />
+        <module name="licensing-service" />
         <module name="chapter6-servicediscovery" />
         <module name="chapter4-docker" />
         <module name="chapter5-configserver" />
@@ -18,6 +18,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="chap4" target="11" />
+      <module name="chapter3" target="11" />
       <module name="chapter4" target="19" />
       <module name="chapter4-docker" target="17" />
       <module name="chapter4-dockerize" target="11" />
@@ -35,6 +36,7 @@
       <module name="chapter5-configserver" options="-parameters" />
       <module name="chapter6-servicediscovery" options="-parameters" />
       <module name="hello" options="-parameters" />
+      <module name="licensing-service" options="-parameters" />
       <module name="organization-service" options="-parameters" />
       <module name="organizationservice" options="-parameters" />
     </option>
