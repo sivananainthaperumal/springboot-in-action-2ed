@@ -21,9 +21,9 @@ public class OrganizationController {
     private OrganizationService service;
 
 
-    @RequestMapping(value="/{organizationId}",method = RequestMethod.GET)
-    public ResponseEntity<Organization> getOrganization( @PathVariable("organizationId") String organizationId) {
-        return ResponseEntity.ok(service.findById(organizationId));
+    @RequestMapping(value="/{organizationName}",method = RequestMethod.GET)
+    public ResponseEntity<Organization> getOrganization( @PathVariable("organizationName") String organizationName) {
+        return ResponseEntity.ok(service.findByName(organizationName));
     }
 
     @RequestMapping(value="/{organizationId}",method = RequestMethod.PUT)
@@ -38,8 +38,8 @@ public class OrganizationController {
 
     @RequestMapping(value="/{organizationId}",method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteOrganization( @PathVariable("id") String id,  @RequestBody Organization organization) {
-        service.delete(organization);
+    public void deleteOrganization( @PathVariable("organizationId") String organizationId) {
+        service.delete(organizationId);
     }
 
 }

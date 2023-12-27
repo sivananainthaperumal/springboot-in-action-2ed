@@ -20,6 +20,11 @@ public class OrganizationService {
         return (opt.isPresent()) ? opt.get() : null;
     }
 
+    public Organization findByName(String organizationName){
+        Optional<Organization> opt = repository.findByName(organizationName);
+        return (opt.isPresent()) ? opt.get() : null;
+    }
+
     public Organization create(Organization organization){
     	organization.setId( UUID.randomUUID().toString());
         organization = repository.save(organization);
@@ -31,7 +36,7 @@ public class OrganizationService {
     	repository.save(organization);
     }
 
-    public void delete(Organization organization){
-    	repository.deleteById(organization.getId());
+    public void delete(String organizationId){
+    	repository.deleteById(organizationId);
     }
 }
