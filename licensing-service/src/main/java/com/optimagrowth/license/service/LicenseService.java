@@ -113,14 +113,24 @@ public class LicenseService {
 
 	}
 
-	@CircuitBreaker(name = "licenseService")
+	@CircuitBreaker(name = "licenseService", fallbackMethod = "buildFallbackLicenseList")
 	public List<License> getLicensesByOrganization(String organizationId) throws TimeoutException {
 		randomlyRunLong();
 		return licenseRepository.findByOrganizationId(organizationId);
 	}
 
+	@SuppressWarnings("unused")
+	private List<License> buildFallbackLicenseList(String organizationId, Throwable t){
+		List<License> fallbackList = new ArrayList<>();
+		License license = new License();
+		license.setLicenseId("0000000-00-00000");
+		license.setOrganizationId(organizationId);
+		license.setProductName("Sorry no licensing information currently available");
+		fallbackList.add(license);
+		return fallbackList;
+	}
+
 	private void randomlyRunLong() throws TimeoutException{
-		logger.info("Inside randomly run ....");
 		Random rand = new Random();
 		int randomNum = rand.nextInt((3 - 1) + 1) + 1;
 		if (randomNum==3) sleep();
