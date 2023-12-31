@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.optimagrowth.license.model.License;
 import com.optimagrowth.license.service.LicenseService;
+import com.optimagrowth.license.utils.UserContextHolder;
 
 @RestController
 @RequestMapping(value="v1/organization/{organizationId}/license")
@@ -71,6 +72,7 @@ public class LicenseController {
 
 	@RequestMapping(value="/",method = RequestMethod.GET)
 	public List<License> getLicenses( @PathVariable("organizationId") String organizationId) throws TimeoutException {
+		logger.debug("LicenseServiceController Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
 		return licenseService.getLicensesByOrganization(organizationId);
 	}
 
