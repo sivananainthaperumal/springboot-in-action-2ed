@@ -12,7 +12,7 @@ logging:
     com.netflix: WARN
     org.springframework.web: WARN
     com.optimagrowth: DEBUG
-
+    
 #auditevents  , Exposes audit events information for the current application.
 #beans  , Displays a complete list of all the Spring beans in your application.
 #caches , Exposes available caches.
@@ -38,7 +38,6 @@ management.endpoints.enabled-by-default: false
 management.endpoint.health:
  enabled: true
  show-details: always
-
 
 resilience4j.circuitbreaker:
   instances:
@@ -75,7 +74,6 @@ resilience4j.retry:
       retry-exceptions:
         - java.util.concurrent.TimeoutException
 
-
 resilience4j.bulkhead:
   instances:
     bulkheadLicenseService:
@@ -89,4 +87,3 @@ resilience4j.thread-pool-bulkhead:
       maxThreadPoolSize: 1
       coreThreadPoolSize: 1
       queueCapacity: 1
-      keepAliveDuration: 20ms
