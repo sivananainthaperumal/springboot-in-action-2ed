@@ -4,6 +4,8 @@ server:
 eureka:
   instance:
     preferIpAddress: true
+    prefer-ip-address: true
+    hostname: localhost
   client:
     registerWithEureka: true
     fetchRegistry: true
@@ -28,9 +30,11 @@ spring:
           - Path=/license/**
           filters:
           - RewritePath=/license/(?<path>.*), /$\{path}
-
-
-       
+    discovery:
+      enabled=true:
+      locator:
+        enabled: true
+        lower-case-service-id: true
 management:
   endpoints:
     web:
