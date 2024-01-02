@@ -47,7 +47,7 @@ public class LicenseService {
 
 	@Autowired
 	OrganizationDiscoveryClient organizationDiscoveryClient;
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(LicenseService.class);
 
 	public License getLicense(String licenseId, String organizationId, String clientType){
