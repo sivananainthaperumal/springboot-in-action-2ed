@@ -23,7 +23,7 @@ public class OrganizationController {
     @Autowired
     private OrganizationService service;
 
-    //@RolesAllowed({ "ADMIN", "USER" })
+    @RolesAllowed({ "admin", "user" })
     @RequestMapping(value="/{organizationName}",method = RequestMethod.GET)
     public ResponseEntity<Organization> getOrganization( @PathVariable("organizationName") String organizationName) {
         Organization organization = service.findByName(organizationName);

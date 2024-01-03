@@ -23,6 +23,8 @@ import com.optimagrowth.license.model.License;
 import com.optimagrowth.license.service.LicenseService;
 import com.optimagrowth.license.utils.UserContextHolder;
 
+import javax.annotation.security.RolesAllowed;
+
 @RestController
 @RequestMapping(value="v1/organization/{organizationId}/license")
 public class LicenseController {
@@ -32,6 +34,7 @@ public class LicenseController {
 	@Autowired
 	private LicenseService licenseService;
 
+	@RolesAllowed({ "admin", "user" })
 	@RequestMapping(value="/{licenseId}",method = RequestMethod.GET)
 	public ResponseEntity<License> getLicense( @PathVariable("organizationId") String organizationId,
 			@PathVariable("licenseId") String licenseId) {
